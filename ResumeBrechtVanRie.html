@@ -1,0 +1,106 @@
+<html>
+<head>
+  <title>Resume - Brecht Van Rie</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="cv.css">
+</head>
+<body> 
+  <div id="container">
+    <div id="summary">
+      <h1>Brech Van Rie</h1>
+        <img id="picture" src="profile.jpg"></img><br>
+        <a href="tel:+32 486452695">+32 486452695</a> | <a href="mailto:brecht.vanrie@gmail.com">brecht.vanrie@gmail.com</a><br>
+        <a href="https://github.com/DracKunn">https://github.com/DracKunn</a><br>
+        <a href="https://www.linkedin.com/in/brecht-van-rie/">https://www.linkedin.com/in/brecht-van-rie/</a><br>
+      <h2>Key Words</h2>
+        <p>Problem solving | Open minded | Eager to learn | Creative | Communication</p>
+      <h2>Tools</h2>
+      <ul>
+        <li>
+          Web: HTML5, CSS, JavaScript, PHP
+          <div id="WebGraph"></div> 
+        </li>
+        
+        <li>
+          Programming: Python (Pandas, Numpy, Matplotlib, Cufflinks ) + basics of C and Java<br>
+          <div id="PythonGraph"></div>
+        </li>
+        
+        <li>
+          Version Control: GIT
+          <div id="GITGraph"></div>
+        </li>
+        
+      </ul>
+    </div>
+    <div id="professional">
+      <h2>Professional Experience</h2>
+      <div class="job">
+        <div class="job-title"><h3>Work & Travel in Canada</h3> <div class="time">OCT 2019&mdash;DEC 2021</div></div>
+        
+        
+        
+      </div>
+      <div class="job">
+        <div class='job-title'><h3>Manager at zerocopy</h3> <div class="time">JUL 2019&mdash;SEP 2019</div></div>
+        <p><a href="https://zerocopy.be/">zerocopy</a> is a company in Brussels offering free copies to students and advertisement space to companies that want to reach students.</p>
+        <p>Advertisement sales: consumer goods advertisement towards young adults, employer
+            branding towards young graduates, awareness raising</p>
+        <p>HR: Document on-boarding, flesh out L&D documents, Talent Acquisition</p>
+        <p>Webmaster: update blogs, maintain Zerocopy website (WordPress)</p>
+        <p>Operations: optimize pipedrive use, templating, mail & deal-flow automation</p>
+      </div>
+      <div class="job">
+        <div class="job-title"><h3>Consultant at TEKsystems</h3> <div class="time">SEP 2016&mdash; JUN 2019</div></div>
+        <p><a href="https://www.teksystems.com/en">TEKsystems</a> is a tech and finance recruitment company.</p>
+        <p>Manage recruitment pipeline for Risk and Finance market</p>
+        <p>Find and maintain new client relations</p>
+        <p>Analyze Client’s need and offer solutions based on received information.</p>
+        <p>Source candidates and guide them through the interview process</p>
+        <p>Follow up and QA of services with partners and clients.</p>
+        <p>Coordinating recruitment pipeline using agile methodology.</p>
+        <p>Creating and automating dashboards for internal and external performance</p>
+        <p>Training colleagues in the use of Salesforce and building dashboards</p>
+        <p>Work on change projects with clients.</p>
+      </div>
+      
+    <div id="education">
+      <h2>Studies</h2>
+      <div class="program">
+        <div class='edu-title'><h3>Master of Science in Work and Organizational Psychology at UGent</h3> <div class="time"> SEP 2008 &mdash;JUM 2016</div></div>
+        <ul>
+          <li>Thesis: <a href="https://lib.ugent.be/en/catalog/rug01:002274651">“(Af)reageren op het internet: De relatie tussen tegenspoed op het werk en razernij op online nieuwsfora"</a>  </li>
+          <p></p>
+        </ul>
+      </div>
+    </div>
+
+    <div id="personal">
+      <h2>Languages</h2>
+      <ul>
+        <li>Dutch: native proficiency</li>
+        <li>English: native proficiency</li>
+        <li>French: professional working proficiency</li>
+        <li>Spanish: basic working proficiency</li>
+      </ul>
+      <h2>Extra</h2>
+      <p>Certified CELTA teacher – sports: swimming, bouldering, snowboard – passions: music, travelling, games.</p>
+    </div>
+  </div>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script>
+    var tools = ['Python', 'Web', 'GIT'];
+    var proficiency = [0.3, 0.4, 0.2];
+    var toolGraph = [];
+    for (var i = 0; i < tools.length; i++) {
+      toolGraph[i] = d3.select('#' + tools[i] + 'Graph').append('svg').attr({"class":"proficiency", 'viewBox':"0 0 740 50", 'width':'100%','height':50});
+      tick = 50 + proficiency[i] * 600
+      toolGraph[i].append('line').attr({'x1':50, 'y1':25, 'x2':tick, 'y2':25, 'style':"stroke-width:9"});
+      toolGraph[i].append('line').attr({'x1':tick, 'y1':25, 'x2':650, 'y2':25, 'style':"stroke-width:1"});
+      /* toolGraph[i].append('circle').attr({'cx':tick, 'cy':25, 'r':6}); */
+    d3.selectAll('.job').append('svg').attr({'class':'job-circle', 'width':30, 'height':30}).append('circle').attr({'cx':15, 'cy':11, 'r':11})
+    d3.selectAll('.program').append('svg').attr({'class':'job-circle', 'width':30, 'height':30}).append('circle').attr({'cx':15, 'cy':11, 'r':11})
+    }
+  </script>
+</body>
+</html>
